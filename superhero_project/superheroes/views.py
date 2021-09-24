@@ -48,4 +48,10 @@ def update(request, hero_id):
     else: 
         return render(request, 'superheroes/update.html', context, hero_id)
 
-        
+def delete(request, hero_id):
+    single_hero = Superhero.objects.get(pk=hero_id)
+    context = {
+        'single_hero' : single_hero,
+    }
+    single_hero.delete()
+    return render(request, 'superheroes/delete.html')
