@@ -46,7 +46,7 @@ def update(request, hero_id):
         single_hero.save()
         return HttpResponseRedirect(reverse('superheroes:index'))
     else: 
-        return render(request, 'superheroes/update.html', context, hero_id)
+        return render(request, 'superheroes/update.html', context)
 
 def delete(request, hero_id):
     single_hero = Superhero.objects.get(pk=hero_id)
