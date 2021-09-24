@@ -34,14 +34,18 @@ def create(request):
 
 def update(request, hero_id):
     single_hero = Superhero.objects.get(pk=hero_id)
+    context = {
+        'single_hero' : single_hero,
+    }
     if request.method == "POST":
-        name = request.POST.get('name')
-        alter_ego = request.POST.get('alter_ego')
-        catch_phrase = request.POST.get('catch_phrase')
-        primary_ability = request.POST.get('primary_ability')
-        secondary_ability = request.POST.get('secondary_ability')
-        single_hero = single_hero(name=name, alter_ego=alter_ego, catch_phrase=catch_phrase, primary_ability=primary_ability, secondary_ability=secondary_ability)
+        single_hero.name = request.POST.get('name')
+        single_hero.alter_ego = request.POST.get('alter_ego')
+        single_hero.catch_phrase = request.POST.get('catch_phrase')
+        single_hero.primary_ability = request.POST.get('primary_ability')
+        single_hero.secondary_ability = request.POST.get('secondary_ability')
         single_hero.save()
         return HttpResponseRedirect(reverse('superheroes:index'))
     else: 
-        return render(request, 'superheroes/update.html')
+        return render(request, 'superheroes/update.html', context, hero_id)
+
+        

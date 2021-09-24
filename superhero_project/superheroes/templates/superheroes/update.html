@@ -7,14 +7,14 @@
     <title>Update Superhero Details!</title>
 </head>
 <body>
-    <form action="{% url 'superheroes:update' hero.id %}" method="post">
+    <form action="{% url 'superheroes:update' single_hero.id %}" method="post">
         {% csrf_token %}
         <h2>Name: <input type = "text", value="{{single_hero.name}}", name = "name", id = "name"></h2> <br />
         <h2>Alter Ego: <input type = "text", value="{{single_hero.alter_ego}}", name = "alter_ego", id = "alter_ego"></h2> <br />
         <h2>Catch Phrase: <input type = "text", value="{{single_hero.catch_phrase}}", name = "catch_phrase", id = "catch_phrase"></h2> <br />
         <h2>Primary Ability: <input type = "text", value="{{single_hero.primary_ability}}", name = "primary_ability", id = "primary_ability"></h2> <br />
         <h2>Secondary Ability: <input type = "text", value="{{single_hero.secondary_ability}}", name = "secondary_ability", id = "secondary_ability"></h2> <br />
-        <input type="submit" value="Add!">
+        <input type="submit" value="Update!">
     </form>
 </body>
 </html>
