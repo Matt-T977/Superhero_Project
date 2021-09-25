@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superhero Details!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
-<body>
-    <h1>{{single_hero.name}}'s Details!</h1>
-    <h2>Alter Ego: {{single_hero.alter_ego}}</h2>
-    <h2>Catch Phrase: {{single_hero.catch_phrase}}</h2>
-    <h2>Primary Ability: {{single_hero.primary_ability}}</h2>
-    <h2>Secondary Ability: {{single_hero.secondary_ability}}</h2>
-
-    
+<body class= "container-fluid bg-dark">
+    <div class = "row">
+        <div class= "col display-4 text-uppercase text-center text-white bg-dark">Superhero Database!</div>
+    </div>
+    <div class= "row"></div>
+    <div class= "row">
+        <div class= "col">
+            <div class="card bg-secondary text-white text-center">
+                <div class="card-header display-3">{{single_hero.name}}'s Details!</div>
+                <div class="card-body display-6">
+                    <ul class= "list-unstyled">
+                       <li>Alter Ego: {{single_hero.alter_ego}}</li>
+                       <li>Catch Phrase: {{single_hero.catch_phrase}}</li>
+                       <li>Primary Ability: {{single_hero.primary_ability}}</li>
+                       <li>Secondary Ability: {{single_hero.secondary_ability}}</li>
+                    </ul>
+                </div>
+                <div class="card-footer"><a class= "text-white" href="{% url 'superheroes:index' %}">Return to Main Menu?</a></div>
+        </div>
+    </div>
 </body>
 </html>

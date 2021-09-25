@@ -5,18 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Superhero!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Add A New Superhero!</h1>
-    <form action="{% url 'superheroes:create' %}" method="post">
-        {% csrf_token %}
-        <h2>Name: <input type = "text", name = "name", id = "name"></h2> <br />
-        <h2>Alter Ego: <input type = "text", name = "alter_ego", id = "alter_ego"></h2> <br />
-        <h2>Catch Phrase: <input type = "text", name = "catch_phrase", id = "catch_phrase"></h2> <br />
-        <h2>Primary Ability: <input type = "text", name = "primary_ability", id = "primary_ability"></h2> <br />
-        <h2>Secondary Ability: <input type = "text", name = "secondary_ability", id = "secondary_ability"></h2> <br />
-        <input type="submit" value="Add!">
-    </form>
+<body class= "container-fluid bg-secondary text-white">
+    <div class = "row">
+        <div class= "col display-4 text-uppercase text-center bg-dark">Superhero Database!</div>
+    </div>
+    <div class= "row">
+        <div class= "h2 text-center bg-primary shadow">
+            Add A New Superhero!
+        </div>
+    </div>
+    <div>
+        <form action="{% url 'superheroes:create' %}" method="post">
+            {% csrf_token %}
+            <label for="name" class="form-label display-6">Name:</label>
+            <input type = "text", class= "form-control", name = "name", id = "name"><br />
+            <label for="alter_ego" class="form-label display-6">Alter Ego:</label>
+            <input type = "text", class= "form-control", name = "alter_ego", id = "alter_ego"><br />
+            <label for="catch_phrase" class="form-label display-6">Catch Phrase:</label>
+            <input type = "text", class= "form-control", name = "catch_phrase", id = "catch_phrase"><br />
+            <label for="primary_ability" class="form-label display-6">Primary Ability:</label>
+            <input type = "text", class= "form-control", name = "primary_ability", id = "primary_ability"><br />
+            <label for="secondary_ability" class="form-label display-6">Secondary Ability:</label>
+            <input type = "text", class= "form-control", name = "secondary_ability", id = "secondary_ability"><br />
+            <input type="submit" value="Add!">
+        </form>
+    </div>
     
 </body>
 </html>
