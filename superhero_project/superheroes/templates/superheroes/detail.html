@@ -7,24 +7,32 @@
     <title>Superhero Details!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
-<body class= "container-fluid bg-dark">
+<body class= "container-fluid bg-secondary">
     <div class = "row">
         <div class= "col display-4 text-uppercase text-center text-white bg-dark">Superhero Database!</div>
     </div>
     <div class= "row"></div>
     <div class= "row">
         <div class= "col">
-            <div class="card bg-secondary text-white text-center">
+            <div class="card bg-primary text-white text-center mt-3 rounded">
                 <div class="card-header display-3">{{single_hero.name}}'s Details!</div>
                 <div class="card-body display-6">
-                    <ul class= "list-unstyled">
-                       <li>Alter Ego: {{single_hero.alter_ego}}</li>
-                       <li>Catch Phrase: {{single_hero.catch_phrase}}</li>
-                       <li>Primary Ability: {{single_hero.primary_ability}}</li>
-                       <li>Secondary Ability: {{single_hero.secondary_ability}}</li>
-                    </ul>
+                    <dl>
+                       <dt>Alter Ego:</dt>
+                       <dd> {{single_hero.alter_ego}}</dd>
+                       <dt>Catch Phrase:</dt>
+                       <dd> {{single_hero.catch_phrase}}</dd>
+                       <dt>Primary Ability:</dt>
+                       <dd> {{single_hero.primary_ability}}</dd>
+                       <dt>Secondary Ability:</dt>
+                       <dd> {{single_hero.secondary_ability}}</dd>
+                    </dl>
                 </div>
-                <div class="card-footer"><a class= "text-white" href="{% url 'superheroes:index' %}">Return to Main Menu?</a></div>
+                <div class="card-footer">
+                    <button type="button" class= "btn-s btn-primary shadow">
+                        <a class= "text-white" href="{% url 'superheroes:index' %}">Return to Main Menu?</a>
+                    </button>    
+                </div>
         </div>
     </div>
 </body>

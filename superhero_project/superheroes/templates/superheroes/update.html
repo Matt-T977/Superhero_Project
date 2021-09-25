@@ -7,15 +7,30 @@
     <title>Update Superhero Details!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
-<body>
-    <form action="{% url 'superheroes:update' single_hero.id %}" method="post">
-        {% csrf_token %}
-        <h2>Name: <input type = "text", value="{{single_hero.name}}", name = "name", id = "name"></h2> <br />
-        <h2>Alter Ego: <input type = "text", value="{{single_hero.alter_ego}}", name = "alter_ego", id = "alter_ego"></h2> <br />
-        <h2>Catch Phrase: <input type = "text", value="{{single_hero.catch_phrase}}", name = "catch_phrase", id = "catch_phrase"></h2> <br />
-        <h2>Primary Ability: <input type = "text", value="{{single_hero.primary_ability}}", name = "primary_ability", id = "primary_ability"></h2> <br />
-        <h2>Secondary Ability: <input type = "text", value="{{single_hero.secondary_ability}}", name = "secondary_ability", id = "secondary_ability"></h2> <br />
-        <input type="submit" value="Update!">
-    </form>
+<body class= "container-fluid bg-secondary text-white">
+    <div class = "row">
+        <div class= "col display-4 text-uppercase text-center bg-dark">Superhero Database!</div>
+    </div>
+    <div class= "row">
+        <div class= "h2 text-center bg-warning shadow">
+            Updating {{single_hero.name}}!
+        </div>
+    </div>
+    <div>
+        <form action="{% url 'superheroes:update' single_hero.id %}" method="post">
+            {% csrf_token %}
+            <label for="name" class="form-label display-6">Name:</label>
+            <input type = "text", class= "form-control", value="{{single_hero.name}}", name = "name", id = "name"><br />
+            <label for="alter_ego" class="form-label display-6">Alter Ego:</label>
+            <input type = "text", class= "form-control", value="{{single_hero.alter_ego}}", name = "alter_ego", id = "alter_ego"><br />
+            <label for="catch_phrase" class="form-label display-6">Catch Phrase:</label>
+            <input type = "text", class= "form-control", value="{{single_hero.catch_phrase}}", name = "catch_phrase", id = "catch_phrase"><br />
+            <label for="primary_ability" class="form-label display-6">Primary Ability:</label>
+            <input type = "text", class= "form-control", value="{{single_hero.primary_ability}}", name = "primary_ability", id = "primary_ability"><br />
+            <label for="secondary_ability" class="form-label display-6">Secondary Ability:</label>
+            <input type = "text", class= "form-control", value="{{single_hero.secondary_ability}}", name = "secondary_ability", id = "secondary_ability"><br />
+            <input type="submit" value="Update!">
+        </form>
+    </div>
 </body>
 </html>
